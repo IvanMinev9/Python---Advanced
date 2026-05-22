@@ -22,4 +22,4 @@ else:
     if stack:
         print('NO')
     else:
-        print('YES')
+        print('YES') 
