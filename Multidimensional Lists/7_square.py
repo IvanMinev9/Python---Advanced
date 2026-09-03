@@ -1,28 +1,28 @@
-rows, cols = [int(x) for x in input().split(', ')]
+rows, cols = [int(x) for x in input().split(", ")]
 matrix = []
+submatrix = []
+
+max_sum = float("-inf")
+sum_of_submatrix = 0
 
 for _ in range(rows):
-    data = [int(x) for x in input().split(', ')]
-    matrix.append(data)
+    matrix.append([int(x) for x in input().split(", ")])
 
-max_sum = float('-inf')
-sub_matrix = []
-
-for index_row in range(rows - 1):
-    for index_col in range(cols - 1):
-        current = matrix[index_row][index_col]
-        next_element = matrix[index_row][index_col + 1]
-        below_element = matrix[index_row + 1][index_col]
-        diagonal_element = matrix[index_row + 1][index_col + 1]
-
-        sum_elements = current + next_element + below_element + diagonal_element
-        if sum_elements > max_sum:
-            max_sum = sum_elements
-            sub_matrix = [
-                [current, next_element],
+for row in range(rows - 1):
+    for col in range(cols - 1):
+        curr_element = matrix[row][col]
+        next_element = matrix[row][col + 1]
+        below_element = matrix[row + 1][col]
+        diagonal_element = matrix[row + 1][col + 1]
+        
+        sum_of_submatrix = curr_element + next_element + below_element + diagonal_element
+        if sum_of_submatrix > max_sum:
+            max_sum = sum_of_submatrix
+            submatrix = [
+                [curr_element, next_element],
                 [below_element, diagonal_element]
             ]
 
-print(*sub_matrix[0])
-print(*sub_matrix[1])
-print(max_sum)
+print(*submatrix[0])
+print(*submatrix[1])
+print(sum_of_submatrix)

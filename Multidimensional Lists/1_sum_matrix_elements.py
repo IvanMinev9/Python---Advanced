@@ -1,11 +1,10 @@
-rows, cols = [int(x) for x in input().split(', ')]
+n_rows, n_colums = (int(x) for x in input().split(", "))
+
 matrix = []
-total = 0
 
-for _ in range(rows):
-    data = [int(x) for x in input().split(', ')]
+for _ in range(n_rows):
+    data = [int(x) for x in input().split(", ")]
     matrix.append(data)
-    total += sum(data)
 
-print(total)
-print(matrix) 
+print(sum(data))
+print(matrix)

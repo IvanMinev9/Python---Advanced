@@ -1,12 +1,11 @@
-rows, cols = [int(x) for x in input().split(', ')]
+rows, cols = [int(x) for x in input().split(", ")]
 matrix = []
 
 for _ in range(rows):
-    data = [int(x) for x in input().split()]
-    matrix.append(data)
+    matrix.append([int(x) for x in input().split()])
 
 for col in range(cols):
-    coloum_sum = 0
+    cols_sum = 0
     for row in range(rows):
-        coloum_sum += matrix[row][col]
-    print(coloum_sum)
+        cols_sum += matrix[row][col]
+    print(cols_sum)
