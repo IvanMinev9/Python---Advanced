@@ -2,7 +2,7 @@ def is_valid(row1, col1, row2, col2, rows, cols):
     return 0 <= row1 < rows and 0 <= col1 < cols and 0 <= row2 < rows and 0 <= col2 < cols
 
 rows, cols = map(int, input().split())
-matrix = [input().split()]
+matrix = [input().split() for _ in range(rows)]
 
 while True:
     data = input()
