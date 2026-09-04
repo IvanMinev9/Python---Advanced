@@ -3,18 +3,18 @@ second_sequences = set(int(x) for x in input().split())
 
 for _ in range(int(input())):
     line = input().split()
-    command = f'{line[0]} {line[1]}'
+    commands = f"{line[0]} {line[1]}"
     numbers = [int(x) for x in line[2:]]
 
-    if command == 'Add First':
+    if commands == "Add First":
         first_sequences.update(numbers)
-    elif command == 'Add Second':
+    elif commands == "Add Second":
         second_sequences.update(numbers)
-    elif command == 'Remove First':
+    elif commands == "Remove First":
         first_sequences.difference_update(numbers)
-    elif command == 'Remove Second':
+    elif commands == "Remove Second":
         second_sequences.difference_update(numbers)
-    elif command == 'Check Subset':
+    elif commands == "Check Subset":
         print(first_sequences.issubset(second_sequences) or second_sequences.issubset(first_sequences))
 
 print(*sorted(first_sequences), sep=', ')

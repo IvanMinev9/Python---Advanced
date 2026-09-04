@@ -1,29 +1,30 @@
 from collections import deque
 
-bees = deque(int(x) for x in input().split())
+working_bees = deque(int(x) for x in input().split())
 nectar = [int(x) for x in input().split()]
-sumbols = deque(input().split())
+symbol = deque(input().split())
 
 honey = 0
+
 operators = {
-    '+': lambda x, y: x + y,
-    '-': lambda x, y: x - y,
-    '*': lambda x, y: x * y,
-    '/': lambda x, y: x / y if y != 0 else 0
+    "+": lambda a, b: a + b,
+    "-": lambda a, b: a - b, 
+    "*": lambda a, b: a * b,
+    "/": lambda a, b: a / b if b != 0 else 0
 }
 
-while bees and nectar:
-    if nectar[-1] >= bees[0]:
-        honey += abs(operators[sumbols[0]](bees[0], nectar[-1]))
-        bees.popleft()
+while nectar and working_bees:
+    if nectar[-1] >= working_bees[0]:
+        honey += abs(operators[symbol[0]](working_bees[0], nectar[-1]))
+        working_bees.popleft()
         nectar.pop()
-        sumbols.popleft()
+        symbol.popleft()
     else:
         nectar.pop()
 
-print(f'Total honey made: {honey}')
+print(f"Total honey made: {honey}")
 
-if bees:
-    print(f"Bees left: {', '.join(map(str, bees))}")
 if nectar:
-    print(f"Nectar left: {', '.join(map(str, nectar))}")
+    print(f'Nectar left: {", ".join(map(str, nectar))}')
+if working_bees:
+    print(f'Bees left: {", ".join(map(str, working_bees))}')

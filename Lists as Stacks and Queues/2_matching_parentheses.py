@@ -10,4 +10,4 @@ for i in range(len(expression)):
         start_idx = parentheses_stack.pop()
         end_idx = i + 1
         
-        print(expression[start_idx:end_idx])
+        print(expression[start_idx:end_idx]) 

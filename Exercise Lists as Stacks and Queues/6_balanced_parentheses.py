@@ -1,25 +1,25 @@
-expression = input()
+experssion = input()
 
-brackets = {'(': ')',
-            '{': '}',
-            '[':']'}
+brackets = {"(": ")",
+            "[": "]",
+            "{": "}"}
 
 stack = []
 
-for char in expression:
-    if char in brackets:
-        stack.append(char)
-    elif char in brackets.values():
+for ch in experssion:
+    if ch in brackets:
+        stack.append(ch)
+    elif ch in brackets.values():
         if not stack:
-            print('NO')
+            print("NO")
             break
-        last_open = stack.pop()
-        if brackets[last_open] != char:
-            print('NO')
+        last_opening = stack.pop()
+        if brackets[last_opening] != ch:
+            print("NO")
             break
 
 else:
     if stack:
-        print('NO')
+        print("NO")
     else:
-        print('YES') 
+        print("YES")
