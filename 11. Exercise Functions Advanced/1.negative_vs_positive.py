@@ -2,7 +2,7 @@ def negative_positive(*args):
     negative_sum = sum([x for x in args if x < 0])
     positive_sum = sum([x for x in args if x > 0])
     
-    return negative_sum, positive_sum
+    return negative_sum, positive_sum 
 
 negative, positive = negative_positive(
     *[int(x) for x in input().split()]
