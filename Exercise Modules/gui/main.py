@@ -4,4 +4,4 @@ from canvas import app
 if __name__ == "__main__":
     render_main_screen()
     
-    app.mainloop() 
+    app.mainloop()  
