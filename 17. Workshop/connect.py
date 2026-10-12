@@ -23,7 +23,7 @@ def place_player_choice(matrix, c, player_num):
     raise TakenPossitionError
 
 def is_player_num(matrix, r, c, player_num):
-    if r < 0 or c < 0 or r >= len(matrix) or col >= len(matrix[0]):
+    if r < 0 or c < 0 or r >= len(matrix) or c >= len(matrix[0]):
         return False
     return matrix[r][c] == player_num
 
@@ -98,7 +98,7 @@ counter = 0
 while True:
     try:
         colum_num = int(input(f"Player {player}, please choose a column: ")) - 1
-        validate_column_choise(colum_num, cols - 1)
+        validate_column_choise(colum_num, cols)
         row, col = place_player_choice(matrix, colum_num, player)
         print_matrix(matrix)
         
