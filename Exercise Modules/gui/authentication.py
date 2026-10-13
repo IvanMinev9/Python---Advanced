@@ -4,6 +4,17 @@ from utilities import clean_screen
 
 def render_login_screen():
     clean_screen()
+    username = tk.Entry(app)
+    username.grid(row=0, column=0)
+    password = tk.Entry(app)
+    password.grid(row=1, column=0)
+    
+    tk.Button(
+        app,
+        text = "Enter",
+        bg="green",
+        fg="black",
+    ).grid(row=2, column=0)
     
 def render_main_screen():
     tk.Button(
